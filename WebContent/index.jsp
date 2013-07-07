@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<style type="text/css">
+body,td,th {
+	color: #D2E0EA;
+}
+body {
+	background-color: #333;
+}
+</style>
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>stock portfolio</title>
+<link rel="stylesheet"
+	href="css\style.css" />
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2" type=""></script>
+<script
+	src="js\login.js"
+	type=""></script>
+
+
+<link
+	href="css\style1.css"
+	rel="stylesheet" type="text/css" media="screen" />
+
+
+
+
+
+</head>
+<body>
+	  
+	         
+	                                                        
+	          <td style="color: #fff; font-weight: 600; font-size: 14px; font-weight: bold;"
+                       valign="top"><c:choose>
+						<c:when test="${not empty user.mobileNo }">
+							<c:choose>
+								<c:when test="${not empty user.firstName }">
+						 		Welcome ${user.firstName}
+							</c:when>
+								<c:otherwise>
+								Welcome ${user.mobileNo}
+							</c:otherwise>
+							</c:choose>
+						</c:when>
+					</c:choose></td>
+	
+	
+	
+	
+	<div id="wrapper">
+		<div id="header">
+			<div id="logo">
+				<h1>
+					<em>Stock portfolio system</em>
+				</h1>
+				<p>design by girish lalwani</p>
+			</div>
+		</div>
+		
+		<div id="menu">
+			<ul>
+				<li class="current_page_item"><a href="#">Home</a>
+				</li>
+				<li><a href="#">NEWS</a>
+				</li>
+				<li><a href="#">Portfolio</a>
+				</li>
+				<li><a href="#">About </a>
+				</li>
+				<li><a href="#">Links</a>
+				</li>
+				<li><a href="#">Contact</a>
+				</li>
+			</ul>
+		</div>
+		<div>
+		     <c:if test="${not empty errMsg}">
+		       <p>&nbsp;</p>
+		       <h1>
+		         <label style="color:red;font-weight: bold;align=left">${errMsg}</label>
+			  </h1>
+</c:if>
+		</div>	   
+		<div id="page">
+			<div id="page-bgtop">
+				<div id="page-bgbtm" >
+
+					<!-- end #content -->
+					<div id="sidebar" STYLE="float:right">
+						<ul>
+							<li>
+								<div id="search">
+									<form method="get" action="#">
+										<div>
+											<input type="text" name="s" id="search-text" value="" /> <input
+												type="submit" id="search-submit" value="GO" />
+										</div>
+									</form>
+								</div></li>
+
+						</ul>
+						<p>
+
+
+
+
+
+							<div class="container">
+
+
+								<div align="right" style="width: 200px;">
+
+									<!--Code Written By Mohit -->
+
+									<div id="signupContainer">
+
+										<a href="#" id="signupButton"><span>Signup</span>
+										</a>
+
+
+
+										<div id="signupBox">
+											<form id="signupForm" action="SaveUser.do" method="post">
+												<fieldset id="body">
+
+													<label for="firstname">Firstname</label> <input type="text"
+														name="firstName" id="firstName" /> <label for="lastname">Lastname</label>
+													<input type="text" name="lastName" id="lastName" /> <label
+														for="emailId">Email Address</label> <input type="text"
+														name="emailId" id="emailId" /> <label for="password">Password</label>
+													<input type="password" name="password" id="password" /> 
+													<label for="password">Confirm Password</label> <input
+	                                                type="password" name="confirmPassword" id="confirmPassword" />
+													<label for="city">City</label> <input
+													   type="text" name="city" id="city" />
+
+
+
+													<input type="submit" id="signup" value="Sign up" />
+
+												</fieldset>
+
+											</form>
+
+										</div>
+
+
+										<div id="loginContainer">
+											<a href="#" id="loginButton"><span>Login</span>
+											</a>
+
+
+
+											<div id="loginBox">
+												<form id="loginForm" action="Login.do">
+													<fieldset id="body">
+														<fieldset>
+															<label for="email">Email Address</label> <input
+																type="text" name="email_id" id="email_id" />
+														</fieldset>
+														<fieldset>
+															<label for="password">Password</label> <input
+																type="password" name="password" id="password" />
+														</fieldset>
+														<c:if test="${not empty errMsg}">
+												         </c:if>
+														<input type="submit" id="signin" value="Sign in" /> <label
+															for="checkbox"><input type="checkbox"
+															id="checkbox" />Remember me</label>
+													</fieldset>
+													<fieldset>
+														<span><a href="#">Forgot your password?</a>
+														</span>
+													</fieldset>
+												</form>
+											</div>
+										</div>
+
+
+
+
+
+
+
+
+									</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+								</div>
+							</div>
+						</p>
+						<p>&nbsp;</p>
+						<p>&nbsp;</p>
+						<p>&nbsp;</p>
+						<p>&nbsp;</p>
+						<ul>
+							<li></li>
+							<li>
+								<h2>&nbsp;</h2></li>
+							<li></li>
+						</ul>
+					</div>
+					<!-- end #sidebar -->
+					<div style="clear: both;">&nbsp;</div>
+				</div>
+			</div>
+		</div>
+		<!-- end #page -->
+	</div>
+	<div id="footer">
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+	</div>
+	<!-- end #footer -->
+</body>
+</html>
